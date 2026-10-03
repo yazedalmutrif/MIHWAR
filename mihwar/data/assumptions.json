@@ -1,0 +1,15 @@
+{
+  "_notice": "ASSUMPTIONS for the 'estimated hours saved' KPI. Editable; not measured results.",
+  "notice_ar": "تقديرات مبنية على افتراضات قابلة للتعديل، وليست نتائج مقاسة.",
+  "hourly_cost_sar": 120,
+  "minutes_saved_per_step": {
+    "intake": 30,
+    "proposal": 90,
+    "planner": 60,
+    "team": 20,
+    "documents": 8,
+    "compliance": 45,
+    "security": 0,
+    "reporting": 25
+  }
+}

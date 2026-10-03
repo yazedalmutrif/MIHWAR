@@ -1,0 +1,39 @@
+{
+  "_notice": "ILLUSTRATIVE rule values for the demo. They are NOT official Saudi Building Code or municipal values.",
+  "name_ar": "حزمة قواعد توضيحية للمشاريع السكنية والتجارية",
+  "version": "0.1-demo",
+  "notice_ar": "قيم توضيحية للعرض — تُستبدل بالقيم الرسمية من كود البناء السعودي والاشتراطات البلدية المعتمدة.",
+  "rules": [
+    {"id": "Z-01", "name_ar": "نسبة التغطية القصوى (سكني)", "param": "coverage_ratio", "op": "<=", "value": 0.60, "unit_ar": "%", "display": "pct", "severity": "high",
+     "applies_to": ["villa", "residential_building", "rest_house"], "fix_ar": "قلّل مسطح الدور الأرضي أو أعد توزيع المساحات على الأدوار العلوية."},
+    {"id": "Z-02", "name_ar": "نسبة التغطية القصوى (تجاري/مكاتب)", "param": "coverage_ratio", "op": "<=", "value": 0.70, "unit_ar": "%", "display": "pct", "severity": "high",
+     "applies_to": ["commercial", "mixed_use", "office", "warehouse"], "fix_ar": "قلّل البصمة الأرضية للمبنى أو أضف دورًا وفق الارتفاع المسموح."},
+    {"id": "Z-03", "name_ar": "الحد الأدنى للارتداد الأمامي", "param": "setback_front_m", "op": ">=", "value": 3.0, "unit_ar": "م", "display": "num", "severity": "high",
+     "applies_to": ["villa", "residential_building", "commercial", "mixed_use", "office", "rest_house"], "fix_ar": "أزح خط الواجهة الأمامية للداخل حتى يتحقق الارتداد المطلوب."},
+    {"id": "Z-04", "name_ar": "الحد الأدنى للارتداد الجانبي", "param": "setback_side_m", "op": ">=", "value": 2.0, "unit_ar": "م", "display": "num", "severity": "medium",
+     "applies_to": ["villa", "residential_building", "rest_house"], "fix_ar": "عدّل عرض الكتلة أو أعد توزيع الفراغات لتحقيق الارتداد الجانبي."},
+    {"id": "Z-05", "name_ar": "الحد الأدنى للارتداد الخلفي", "param": "setback_rear_m", "op": ">=", "value": 2.0, "unit_ar": "م", "display": "num", "severity": "medium",
+     "applies_to": ["villa", "residential_building", "rest_house"], "fix_ar": "قلّل عمق الكتلة من الخلف أو انقل الملحق الخدمي."},
+    {"id": "Z-06", "name_ar": "الحد الأقصى لارتفاع المبنى (فلل)", "param": "height_m", "op": "<=", "value": 12.0, "unit_ar": "م", "display": "num", "severity": "high",
+     "applies_to": ["villa", "rest_house"], "fix_ar": "خفّض ارتفاع الأدوار أو ألغِ الدور الإضافي."},
+    {"id": "Z-07", "name_ar": "الحد الأقصى لعدد الأدوار (فلل)", "param": "floors", "op": "<=", "value": 3, "unit_ar": "دور", "display": "int", "severity": "high",
+     "applies_to": ["villa"], "fix_ar": "قلّل عدد الأدوار إلى الحد المسموح."},
+    {"id": "Z-08", "name_ar": "الحد الأدنى لمواقف السيارات", "param": "parking_spaces", "op": ">=per_unit", "value": 1, "unit_ar": "موقف لكل وحدة", "display": "int", "severity": "medium",
+     "applies_to": ["villa", "residential_building", "mixed_use"], "fix_ar": "أضف مواقف في القبو أو الارتداد الأمامي حتى يتحقق العدد المطلوب."}
+  ],
+  "deliverables": {
+    "design": [
+      {"discipline": "architectural", "doc_type": "DR", "label_ar": "المخططات المعمارية", "service": "arch_design"},
+      {"discipline": "structural", "doc_type": "DR", "label_ar": "المخططات الإنشائية", "service": "struct_design"},
+      {"discipline": "structural", "doc_type": "CA", "label_ar": "الحسابات الإنشائية", "service": "struct_design"},
+      {"discipline": "electrical", "doc_type": "DR", "label_ar": "مخططات الكهرباء", "service": "mep_design"},
+      {"discipline": "mechanical", "doc_type": "DR", "label_ar": "مخططات التكييف والميكانيك", "service": "mep_design"},
+      {"discipline": "plumbing", "doc_type": "DR", "label_ar": "مخططات السباكة والصرف", "service": "mep_design"}
+    ],
+    "permit": [
+      {"discipline": "general", "doc_type": "RP", "label_ar": "تقرير فحص التربة", "service": "permit"},
+      {"discipline": "architectural", "doc_type": "DR", "label_ar": "المخططات المعمارية المعتمدة", "service": "permit"}
+    ]
+  },
+  "phase_names": {"design": "مرحلة التصميم", "permit": "مرحلة رخصة البناء"}
+}

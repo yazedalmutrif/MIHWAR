@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>محور | المكتب الهندسي السحابي</title>
+  <meta name="description" content="محور: منصة سحابية للمكاتب الهندسية يديرها فريق من وكلاء الذكاء الاصطناعي (نموذج أولي).">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <div class="brand" id="brand"></div>
+      <nav class="nav" id="nav" aria-label="القائمة الرئيسية"></nav>
+      <div class="sidebar-foot" id="sidebar-foot"></div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <div class="page-title"><h1 id="page-title">محور</h1><p id="page-sub"></p></div>
+        <div class="spacer"></div>
+        <span id="mode-chip"></span>
+        <span class="chip demo" title="المكتب والعملاء والمشاريع غير حقيقية">بيانات افتراضية</span>
+        <div class="roles" id="roles"></div>
+      </header>
+      <main id="view" class="view"><div class="loading-row"><span class="spinner"></span>&nbsp; جارٍ تشغيل محور…</div></main>
+    </div>
+  </div>
+  <div id="toast-root"></div>
+  <div id="drawer-root"></div>
+  <script type="module" src="/assets/js/app.js"></script>
+</body>
+</html>

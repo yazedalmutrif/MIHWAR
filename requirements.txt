@@ -1,0 +1,10 @@
+# Mihwar prototype — pinned to the versions it was tested with (Python 3.10+).
+fastapi==0.142.2
+uvicorn==0.54.0
+pydantic==2.13.5
+python-multipart==0.0.32
+# Optional LLM mode (Claude). Not used unless MIHWAR_LLM=on.
+anthropic==1.11.0
+# Tests
+pytest==9.1.1
+httpx==0.28.1

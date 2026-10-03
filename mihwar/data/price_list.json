@@ -1,0 +1,47 @@
+{
+  "_notice": "ILLUSTRATIVE demo values only. Replace with the office's real fee schedule.",
+  "notice_ar": "قيم توضيحية للعرض — تُستبدل بالقيم الرسمية/الفعلية.",
+  "currency": "SAR",
+  "vat_rate": 0.15,
+  "coverage_factor": 0.6,
+  "annex_factor": 0.5,
+  "type_multipliers": {
+    "villa": 1.0,
+    "residential_building": 0.9,
+    "commercial": 1.1,
+    "mixed_use": 1.15,
+    "office": 1.05,
+    "rest_house": 0.9,
+    "warehouse": 0.7,
+    "mosque": 1.1,
+    "renovation": 0.8,
+    "interior": 1.0
+  },
+  "services": {
+    "arch_design":   {"basis": "per_m2",      "rate": 35,   "min_fee": 15000, "unit_ar": "م²"},
+    "struct_design": {"basis": "per_m2",      "rate": 20,   "min_fee": 10000, "unit_ar": "م²"},
+    "mep_design":    {"basis": "per_m2",      "rate": 18,   "min_fee": 9000,  "unit_ar": "م²"},
+    "permit":        {"basis": "lump_sum",    "rate": 6000, "min_fee": 6000,  "unit_ar": "مبلغ مقطوع"},
+    "supervision":   {"basis": "per_month",   "rate": 7000, "min_fee": 7000,  "unit_ar": "شهر", "months_default": 12,
+                      "months_by_type": {"villa": 12, "residential_building": 16, "commercial": 14, "mixed_use": 18, "office": 14, "rest_house": 8, "warehouse": 6, "mosque": 10, "renovation": 4, "interior": 3}},
+    "interior":      {"basis": "per_m2",      "rate": 60,   "min_fee": 12000, "unit_ar": "م²"},
+    "landscape":     {"basis": "per_m2_land", "rate": 15,   "min_fee": 5000,  "unit_ar": "م² من الأرض"},
+    "bim":           {"basis": "per_m2",      "rate": 12,   "min_fee": 8000,  "unit_ar": "م²"},
+    "boq":           {"basis": "per_m2",      "rate": 8,    "min_fee": 5000,  "unit_ar": "م²"}
+  },
+  "milestones": [
+    {"name_ar": "الدفعة الأولى", "pct": 30, "trigger_ar": "عند توقيع العقد"},
+    {"name_ar": "الدفعة الثانية", "pct": 40, "trigger_ar": "عند اعتماد التصميم المبدئي"},
+    {"name_ar": "الدفعة الثالثة", "pct": 30, "trigger_ar": "عند تسليم المخططات النهائية"}
+  ],
+  "validity_days": 30,
+  "exclusions_ar": [
+    "الرسوم الحكومية ورسوم إصدار الرخص",
+    "أعمال الرفع المساحي وفحص التربة (تُطلب من جهات متخصصة)",
+    "التعديلات الجوهرية بعد اعتماد التصميم المبدئي"
+  ],
+  "assumptions_ar": [
+    "تقدير مسطحات البناء مبني على نسبة تغطية توضيحية 60% من مساحة الأرض",
+    "الأتعاب والمدد قيم توضيحية لأغراض العرض"
+  ]
+}

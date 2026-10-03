@@ -1,0 +1,38 @@
+{
+  "_notice": "ILLUSTRATIVE durations only. Replace with the office's real planning norms.",
+  "notice_ar": "مدد المهام قيم توضيحية للعرض — تُستبدل بمعايير التخطيط الفعلية للمكتب.",
+  "hours_per_day": 6,
+  "size_factors": [[500, 1.0], [1000, 1.2], [3000, 1.5], [null, 2.0]],
+  "phases": {
+    "concept": "الدراسات والتصميم المبدئي",
+    "detailed": "التصميم التفصيلي",
+    "engineering": "التصميم الهندسي",
+    "handover": "المراجعة والتسليم",
+    "permit": "رخصة البناء",
+    "supervision": "الإشراف على التنفيذ"
+  },
+  "phase_order": ["concept", "detailed", "engineering", "handover", "permit", "supervision"],
+  "design_phases": ["concept", "detailed", "engineering"],
+  "tasks": [
+    {"key": "brief",         "service": "*",             "phase": "concept",     "name_ar": "اجتماع المتطلبات ورفع بيانات الموقع", "discipline": "architectural", "days": 2,  "load": 0.5, "after": []},
+    {"key": "concept",       "service": "arch_design",   "phase": "concept",     "name_ar": "التصميم المبدئي (Concept)",           "discipline": "architectural", "days": 8,  "load": 0.8, "after": ["brief"]},
+    {"key": "concept_ok",    "service": "arch_design",   "phase": "concept",     "name_ar": "اعتماد العميل للتصميم المبدئي",       "discipline": "architectural", "days": 1,  "load": 0.0, "after": ["concept"], "milestone": true},
+    {"key": "arch_detail",   "service": "arch_design",   "phase": "detailed",    "name_ar": "المخططات المعمارية التفصيلية",         "discipline": "architectural", "days": 12, "load": 0.8, "after": ["concept_ok"]},
+    {"key": "elevations",    "service": "arch_design",   "phase": "detailed",    "name_ar": "الواجهات والقطاعات",                   "discipline": "architectural", "days": 6,  "load": 0.6, "after": ["concept_ok"]},
+    {"key": "interior",      "service": "interior",      "phase": "detailed",    "name_ar": "التصميم الداخلي والتشطيبات",           "discipline": "architectural", "days": 10, "load": 0.8, "after": ["concept_ok"]},
+    {"key": "landscape",     "service": "landscape",     "phase": "detailed",    "name_ar": "تنسيق الموقع العام",                   "discipline": "architectural", "days": 5,  "load": 0.5, "after": ["concept_ok"]},
+    {"key": "bim",           "service": "bim",           "phase": "detailed",    "name_ar": "بناء نموذج BIM المنسّق",               "discipline": "architectural", "days": 10, "load": 0.6, "after": ["arch_detail"]},
+    {"key": "struct_calc",   "service": "struct_design", "phase": "engineering", "name_ar": "التحليل والحسابات الإنشائية",          "discipline": "structural",    "days": 8,  "load": 0.8, "after": ["concept_ok"]},
+    {"key": "struct_dwg",    "service": "struct_design", "phase": "engineering", "name_ar": "المخططات الإنشائية",                   "discipline": "structural",    "days": 8,  "load": 0.8, "after": ["struct_calc"]},
+    {"key": "elec",          "service": "mep_design",    "phase": "engineering", "name_ar": "تصميم الأعمال الكهربائية",             "discipline": "electrical",    "days": 7,  "load": 0.7, "after": ["concept_ok"]},
+    {"key": "mech",          "service": "mep_design",    "phase": "engineering", "name_ar": "تصميم التكييف والأعمال الميكانيكية",    "discipline": "mechanical",    "days": 7,  "load": 0.7, "after": ["concept_ok"]},
+    {"key": "plumb",         "service": "mep_design",    "phase": "engineering", "name_ar": "تصميم أعمال السباكة والصرف",            "discipline": "plumbing",      "days": 5,  "load": 0.7, "after": ["concept_ok"]},
+    {"key": "boq",           "service": "boq",           "phase": "handover",    "name_ar": "جداول الكميات والمواصفات",             "discipline": "general",       "days": 5,  "load": 0.7, "after": ["*design_done"]},
+    {"key": "qa",            "service": "*",             "phase": "handover",    "name_ar": "مراجعة الجودة والاشتراطات",             "discipline": "general",       "days": 2,  "load": 0.5, "after": ["*design_done"]},
+    {"key": "permit_file",   "service": "permit",        "phase": "permit",      "name_ar": "تجهيز ملف رخصة البناء",                "discipline": "general",       "days": 3,  "load": 0.6, "after": ["qa"]},
+    {"key": "permit_submit", "service": "permit",        "phase": "permit",      "name_ar": "تقديم طلب الرخصة ومتابعته",            "discipline": "general",       "days": 10, "load": 0.2, "after": ["permit_file"]},
+    {"key": "permit_ok",     "service": "permit",        "phase": "permit",      "name_ar": "إصدار رخصة البناء",                    "discipline": "general",       "days": 1,  "load": 0.0, "after": ["permit_submit"], "milestone": true},
+    {"key": "handover",      "service": "*",             "phase": "handover",    "name_ar": "التسليم النهائي للمخططات",              "discipline": "general",       "days": 1,  "load": 0.0, "after": ["qa", "boq"], "milestone": true},
+    {"key": "supervision",   "service": "supervision",   "phase": "supervision", "name_ar": "الإشراف على التنفيذ (زيارات دورية)",    "discipline": "structural",    "days": 40, "load": 0.25, "after": ["handover", "permit_ok"]}
+  ]
+}
